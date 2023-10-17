@@ -15,7 +15,7 @@ public class RouletteGame {
         player.placeBet(500, new BetOnNumber(10));
         player.finishBetPhase();
         roulette.spin();
-        System.out.println(roulette.getResult());
+        System.out.println(roulette.getResult() + " " + roulette.getColor());
     }
 
 }
