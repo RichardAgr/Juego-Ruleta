@@ -3,9 +3,8 @@ public class BetOnColor extends BetType {
 
     private String colorBet;
 
-    public BetOnColor(String colorBet, int profit) {
+    public BetOnColor(String colorBet) {
         this.colorBet = colorBet;
-        super.profit = profit;
     }
 
 }

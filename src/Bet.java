@@ -7,7 +7,8 @@ public class Bet {
         this.betType = betType;
     }
 
-    public boolean playerHaveEnoughMoney(){
-        return true;
+    public int calculateProfit() {
+        return 0;
     }
+
 }

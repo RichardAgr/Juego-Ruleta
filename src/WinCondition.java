@@ -1,0 +1,3 @@
+interface WinCondition {
+    boolean checkWinCondition();
+}

@@ -1,11 +1,10 @@
 
 public class BetOnNumber extends BetType {
 
-    private int colorBet;
+    private int numberBet;
 
-    public BetOnNumber(int colorBet, int profit) {
-        this.colorBet = colorBet;
-        super.profit = profit;
+    public BetOnNumber(int numberBet) {
+        this.numberBet = numberBet;
     }
 
 }
