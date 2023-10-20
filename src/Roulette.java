@@ -8,6 +8,8 @@ public class Roulette{
         randomNumber = new Random();
     }
 
+    private Roulette() {}
+
     public static void spin(){
          result = randomNumber.nextInt(37); 
     }

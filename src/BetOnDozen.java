@@ -1,4 +1,4 @@
-public class BetOnDozen {
+public class BetOnDozen extends BetType implements BetValidation{
     private boolean dozen1;
     private boolean dozen2;
     private boolean dozen3;
@@ -8,4 +8,16 @@ public class BetOnDozen {
         this.dozen2 = dozen2;
         this.dozen3 = dozen3;
     }
+
+    @Override
+    public boolean checkWinCondition() {
+        return false;
+    }
+
+    @Override
+    public boolean isValidBet() {
+        return false;
+    }
+
+
 }
