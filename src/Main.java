@@ -5,17 +5,15 @@ public class Main {
     static RouletteGame rouletteGame;
 
     public static void main(String[] args) {
+        initGame();
+    }
 
+    static void initGame() {
         System.out.println("~~~~~~~~~~~~~~~~~~~~~");
         System.out.println("Welcome to the Casino!");
         System.out.println("~~~~~~~~~~~~~~~~~~~~~");
         System.out.println("Enjoy the games and try your luck!");
         System.out.println("~~~~~~~~~~~~~~~~~~~~~");
-        initGame();
-
-    }
-
-    static void initGame() {
         rouletteGame = new RouletteGame();
     }
 

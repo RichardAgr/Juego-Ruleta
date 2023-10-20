@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 
 public class Player {
+
+
     private ArrayList<Bet> currentBets;
     private int currentMoney;
 
@@ -39,4 +41,9 @@ public class Player {
     public void setCurrentMoney(int currentMoney) {
         this.currentMoney = currentMoney;
     }
+
+    public ArrayList<Bet> getCurrentBets() {
+        return currentBets;
+    }
+
 }
