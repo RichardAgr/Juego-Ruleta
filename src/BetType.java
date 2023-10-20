@@ -1,7 +1,7 @@
 
 public abstract class BetType {
 
-    private int profit = 1;
+    public int profit = 1;
     private String description = "";
 
     public int getProfit() {

@@ -8,7 +8,7 @@ public class Roulette{
         randomNumber=new Random();
     }
 
-    public void spin(int n){
+    public void spin(){
          result = randomNumber.nextInt(37); 
     }
 
