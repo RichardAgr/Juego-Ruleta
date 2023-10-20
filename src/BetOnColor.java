@@ -7,5 +7,9 @@ public class BetOnColor extends BetType {
         this.colorBet = colorBet;
     }
 
+    @Override
+    public boolean checkWinCondition() {
+        return false;
+    }
 }
 

@@ -1,4 +1,4 @@
-public class Bet {
+public class Bet{
     public int moneyBet;
     public BetType betType;
 

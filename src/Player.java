@@ -26,8 +26,15 @@ public class Player {
         return res;
     }
 
-    public void finishBetPhase(){
-        
+    public void finishBetPhase() {
+
+    }
+
+    public void checkWins() {
+        for (Bet bet : currentBets) {
+            bet.betType.checkWinCondition();
+            System.out.println(bet.betType.checkWinCondition());
+        }
     }
 
     public void addMoney(int money){

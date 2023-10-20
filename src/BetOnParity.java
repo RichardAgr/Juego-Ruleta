@@ -6,4 +6,8 @@ public class BetOnParity extends BetType{
         this.isEvenBet = isEvenBet;
     }
 
+    @Override
+    public boolean checkWinCondition() {
+        return false;
+    }
 }

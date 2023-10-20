@@ -1,5 +1,5 @@
 
-public abstract class BetType {
+public abstract class BetType implements WinCondition{
 
     public int profit = 1;
     private String description = "";
@@ -11,4 +11,6 @@ public abstract class BetType {
     public String getDescription() {
         return description;
     }
+
+    public abstract boolean checkWinCondition();
 }

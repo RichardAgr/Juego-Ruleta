@@ -1,22 +1,22 @@
 import java.util.Random;
 
 public class Roulette{
-    private Random randomNumber;
-    public int result;
+    private static final Random randomNumber;
+    public static int result;
 
-    public Roulette(){
-        randomNumber=new Random();
+    static {
+        randomNumber = new Random();
     }
 
-    public void spin(){
+    public static void spin(){
          result = randomNumber.nextInt(37); 
     }
 
-    public int getResult(){
+    public static int getResult(){
         return result;
     }
 
-    public String getColor(){
+    public static String getColor(){
         if (result == 0) {
             return "Verde";
         } else if ((result > 0 && result < 11) || (result > 18 && result < 29)) {
