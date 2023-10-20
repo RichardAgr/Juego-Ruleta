@@ -1,5 +1,5 @@
 
-public abstract class BetType implements WinCondition{
+public abstract class BetType implements WinCondition {
 
     public int profit = 1;
     private String description = "";

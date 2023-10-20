@@ -6,7 +6,7 @@ public class Player {
     private ArrayList<Bet> currentBets;
     private int currentMoney;
 
-    public Player(int money){
+    public Player(int money) {
         this.currentMoney = money;
         this.currentBets = new ArrayList<Bet>();
     }
@@ -43,7 +43,7 @@ public class Player {
         }
     }
 
-    public void addMoney(int money){
+    public void addMoney(int money) {
         currentMoney += money;
     }
 
