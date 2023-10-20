@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Roulette{
+public class Roulette {
     private static final Random randomNumber;
     public static int result;
 
@@ -8,17 +8,18 @@ public class Roulette{
         randomNumber = new Random();
     }
 
-    private Roulette() {}
-
-    public static void spin(){
-         result = randomNumber.nextInt(37); 
+    private Roulette() {
     }
 
-    public static int getResult(){
+    public static void spin() {
+        result = randomNumber.nextInt(37);
+    }
+
+    public static int getResult() {
         return result;
     }
 
-    public static String getColor(){
+    public static String getColor() {
         if (result == 0) {
             return "Verde";
         } else if ((result > 0 && result < 11) || (result > 18 && result < 29)) {

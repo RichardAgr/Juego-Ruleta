@@ -1,8 +1,8 @@
-public class BetOnParity extends BetType{
+public class BetOnParity extends BetType {
 
     private final boolean isEvenBet;
 
-    public BetOnParity (boolean isEvenBet) {
+    public BetOnParity(boolean isEvenBet) {
         this.isEvenBet = isEvenBet;
     }
 

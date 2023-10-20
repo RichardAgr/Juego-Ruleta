@@ -1,4 +1,4 @@
-public class BetOnDozen extends BetType implements BetValidation{
+public class BetOnDozen extends BetType implements BetValidation {
     private final boolean dozen1;
     private final boolean dozen2;
     private final boolean dozen3;

@@ -4,7 +4,7 @@ public class RouletteGame {
     public Roulette roulette;
     public Player player;
 
-    public RouletteGame(){
+    public RouletteGame() {
         initNewGame();
     }
 
