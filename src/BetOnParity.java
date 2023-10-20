@@ -1,6 +1,6 @@
 public class BetOnParity extends BetType{
 
-    private boolean isEvenBet;
+    private final boolean isEvenBet;
 
     public BetOnParity (boolean isEvenBet) {
         this.isEvenBet = isEvenBet;
@@ -8,6 +8,10 @@ public class BetOnParity extends BetType{
 
     @Override
     public boolean checkWinCondition() {
-        return false;
+        return isRouletteNumberEven() == isEvenBet;
+    }
+
+    private boolean isRouletteNumberEven() {
+        return Roulette.getResult() % 2 == 0;
     }
 }

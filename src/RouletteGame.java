@@ -13,9 +13,13 @@ public class RouletteGame {
         player.placeBet(2000, new BetOnNumber(10));
         player.placeBet(500, new BetOnNumber(10));
         player.finishBetPhase();
+        System.out.println();
+        System.out.println("*----- BET PHASE FINISHED -----*");
+        System.out.println("The roulette is spinning...");
         Roulette.spin();
-        player.checkWins();
+        System.out.println("And the result is...");
         System.out.println(Roulette.getResult() + " " + Roulette.getColor());
+        player.checkWins();
     }
 
 }

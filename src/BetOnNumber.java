@@ -1,6 +1,6 @@
 
 public class BetOnNumber extends BetType {
-    private int numberBet;
+    private final int numberBet;
 
     public BetOnNumber(int numberBet) {
         this.numberBet = numberBet;
@@ -10,11 +10,6 @@ public class BetOnNumber extends BetType {
     public boolean checkWinCondition() {
         return Roulette.getResult() == numberBet;
     }
-
-    public int getNumberBet() {
-        return numberBet;
-    }
-
 
 }
 

@@ -14,6 +14,7 @@ public class Player {
     public boolean placeBet(int moneyBet, BetType bet) {
         Bet newBet = new Bet(moneyBet, bet);
         boolean res = false;
+        System.out.println();
         if (moneyBet < currentMoney) {
             currentBets.add(newBet);
             currentMoney -= newBet.moneyBet;
@@ -31,9 +32,14 @@ public class Player {
     }
 
     public void checkWins() {
+        System.out.println("*----- ROULETTE RESULTS -----*");
         for (Bet bet : currentBets) {
             bet.betType.checkWinCondition();
-            System.out.println(bet.betType.checkWinCondition());
+            if (bet.betType.checkWinCondition()) {
+                System.out.println("You won " + bet.moneyBet * bet.betType.getProfit() + " on " + bet.betType.getClass() + ".");
+            } else {
+                System.out.println("You lost " + bet.moneyBet + " on " + bet.betType.getClass() + ".");
+            }
         }
     }
 
