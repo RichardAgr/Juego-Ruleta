@@ -1,11 +1,15 @@
 
 public class BetOnColor extends BetType {
 
-    private String colorBet;
+    private final String colorBet;
 
     public BetOnColor(String colorBet) {
         this.colorBet = colorBet;
     }
 
+    @Override
+    public boolean checkWinCondition() {
+        return Roulette.getColor().equals(colorBet);
+    }
 }
 

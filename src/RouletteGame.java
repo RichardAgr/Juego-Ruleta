@@ -7,15 +7,19 @@ public class RouletteGame {
     }
 
     public void initNewGame() {
-        roulette = new Roulette();
         player = new Player(1000);
         player.addMoney(500);
         player.placeBet(100, new BetOnNumber(10));
         player.placeBet(2000, new BetOnNumber(10));
         player.placeBet(500, new BetOnNumber(10));
         player.finishBetPhase();
-        roulette.spin();
-        System.out.println(roulette.getResult() + " " + roulette.getColor());
+        System.out.println();
+        System.out.println("*----- BET PHASE FINISHED -----*");
+        System.out.println("The roulette is spinning...");
+        Roulette.spin();
+        System.out.println("And the result is...");
+        System.out.println(Roulette.getResult() + " " + Roulette.getColor());
+        player.checkWins();
     }
 
 }

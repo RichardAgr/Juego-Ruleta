@@ -1,15 +1,14 @@
 
-public class BetOnNumber extends BetType implements WinCondition {
-
-    private int numberBet;
+public class BetOnNumber extends BetType {
+    private final int numberBet;
 
     public BetOnNumber(int numberBet) {
         this.numberBet = numberBet;
     }
 
+    @Override
     public boolean checkWinCondition() {
-        System.out.println("WinCondition");
-        return true;
+        return Roulette.getResult() == numberBet;
     }
 
 }
