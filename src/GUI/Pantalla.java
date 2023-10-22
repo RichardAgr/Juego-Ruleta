@@ -11,7 +11,7 @@ public class Pantalla extends JFrame{
 
     public Pantalla(){
         setTitle("Ruleta");
-        setSize(900, 600);
+        setSize(1200, 800);
         setLocationRelativeTo(null);
         setLayout(new GridBagLayout());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -25,7 +25,29 @@ public class Pantalla extends JFrame{
         gbc.gridy = 0;
         gbc.gridwidth = 2;
         gbc.gridheight = 1;
+        gbc.weighty = 1.0;
+        gbc.fill = GridBagConstraints.BOTH;
         add(tabla,gbc);
+
+
+        JPanel rule = new Ruleta();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.gridwidth = 1;
+        gbc.gridheight = 1;
+        gbc.weightx = 1.0;
+        gbc.fill = GridBagConstraints.BOTH;
+        add(rule,gbc);
+
+        JPanel play = new Jugador();
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.gridwidth = 1;
+        gbc.gridheight = 1;
+        gbc.weightx = 1.0;
+        gbc.weighty = 1.0;
+        gbc.fill = GridBagConstraints.BOTH;
+        add(play,gbc);
     }
 
     public static void main(String[] args){
