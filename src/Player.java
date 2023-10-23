@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Player {
 
 
-    private ArrayList<Bet> currentBets;
+    private final ArrayList<Bet> currentBets;
     private int currentMoney;
 
     public Player(int money) {
@@ -39,7 +39,13 @@ public class Player {
                 System.out.println("* You won " + bet.betType.calculateProfit(bet.moneyBet) + " on " + bet.betType.getClass() + ". *");
                 currentMoney += (int) bet.betType.calculateProfit(bet.moneyBet);
             } else {
-                System.out.println("You lost " + bet.moneyBet + " on " + bet.betType.getClass() + ".");
+                if (Roulette.getResult() == 0) {
+                    int recoveredMoney = ProfitCalculator.calculateProfitOnZero(bet);
+                    currentMoney += recoveredMoney;
+                    System.out.println("You lost " + recoveredMoney + " on " + bet.betType.getClass() + ".");
+                } else {
+                    System.out.println("You lost " + bet.moneyBet + " on " + bet.betType.getClass() + ".");
+                }
             }
             System.out.println("You now have " + currentMoney + " left.");
         }

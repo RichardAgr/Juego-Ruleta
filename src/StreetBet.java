@@ -1,17 +1,18 @@
-public class BetOnColumn extends BetType implements BetValidation {
-    private final int columnNumber;
-    private final int profit = 2;
+// Apuesta transversal
+public class StreetBet extends BetType implements BetValidation {
+    private final int RowNumber;
+    private final int profit = 11;
 
-    public BetOnColumn(int columnNumber) {
-        this.columnNumber = columnNumber;
+    public StreetBet(int streetNumber) {
+        this.RowNumber = streetNumber;
     }
 
     @Override
     public boolean checkWinCondition() {
         int rouletteResult = Roulette.getResult();
-        int[] column = GameBoard.getColumn(columnNumber);
+        int[] row = GameBoard.getRow(RowNumber);
 
-        for (int number : column) {
+        for (int number : row) {
             if (number == rouletteResult) {
                 return true;
             }
@@ -32,4 +33,5 @@ public class BetOnColumn extends BetType implements BetValidation {
     public boolean isValidBet() {
         return true;
     }
+
 }

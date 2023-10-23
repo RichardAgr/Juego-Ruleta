@@ -17,7 +17,7 @@ public class RouletteGame {
         //Testing BetOnNumber
         player.placeBet(500, new BetOnNumber(10));
         //Testing BetOnColor
-        player.placeBet(100, new BetOnColor("Rojo"));
+        player.placeBet(100, new BetOnColor(Color.ROJO));
         //Testing BetOnParity
         player.placeBet(100, new BetOnParity(true));
         // Testing BetOnDozen
@@ -26,6 +26,14 @@ public class RouletteGame {
         player.placeBet(100, new BetOnDozen(false, true, false));
         // Testing BetOnColumn
         player.placeBet(100, new BetOnColumn(0));
+        // Testing BetOnTwoColumns
+        player.placeBet(100, new BetOnTwoColumns(0, 1));
+        // Testing StreetBet
+        player.placeBet(100, new StreetBet(2));
+        //Testing CornerBet
+        player.placeBet(100, new CornerBet(17, 15));
+        //Testing SplitBet
+
 
         player.finishBetPhase();
         System.out.println();
@@ -33,8 +41,7 @@ public class RouletteGame {
         System.out.println("The roulette is spinning...");
         Roulette.spin();
         System.out.println("And the result is...");
-        System.out.println(Roulette.getResult() + " " + Roulette.getColor());
-        player.checkWins();
+        System.out.println(Roulette.getResult() + " " + Roulette.getColor().toString());
         System.out.println();
         System.out.println("*----- GAME FINISHED -----*");
 

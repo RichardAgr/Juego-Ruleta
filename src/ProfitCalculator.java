@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class ProfitCalculator {
 
     private ProfitCalculator () {}
@@ -6,4 +8,7 @@ public class ProfitCalculator {
         return moneyBet * betProfit + moneyBet;
     }
 
+    public static int calculateProfitOnZero(Bet currentBet) {
+        return currentBet.moneyBet/2;
+    }
 }
