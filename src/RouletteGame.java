@@ -1,15 +1,13 @@
 import java.util.Arrays;
 
 public class RouletteGame {
-    public Roulette roulette;
-    public Player player;
 
     public RouletteGame() {
         initNewGame();
     }
 
     public void initNewGame() {
-        player = new Player(1000);
+        Player player = new Player(1000);
         player.addMoney(1000);
         // Testing Bet basic logic
         player.placeBet(100, new BetOnNumber(10));

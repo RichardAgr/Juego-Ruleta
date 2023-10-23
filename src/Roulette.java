@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Roulette {
     private static final Random randomNumber;
-    public static int result;
+    private static int result;
 
     static {
         randomNumber = new Random();
@@ -17,6 +17,10 @@ public class Roulette {
 
     public static int getResult() {
         return result;
+    }
+
+    public static void setResult(int result) {
+        Roulette.result = result;
     }
 
     public static Color getColor() {
