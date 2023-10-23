@@ -19,15 +19,15 @@ public class Roulette {
         return result;
     }
 
-    public static String getColor() {
+    public static Color getColor() {
         if (result == 0) {
-            return "Verde";
+            return Color.VERDE;
         } else if ((result > 0 && result < 11) || (result > 18 && result < 29)) {
-            return (result % 2 == 0) ? "Negro" : "Rojo";
+            return (result % 2 == 0) ? Color.NEGRO : Color.ROJO;
         } else if ((result > 10 && result < 19) || (result > 28 && result < 37)) {
-            return (result % 2 == 0) ? "Rojo" : "Negro";
+            return (result % 2 == 0) ? Color.ROJO : Color.NEGRO;
         } else {
-            return "";
+            return Color.VERDE;
         }
     }
 }

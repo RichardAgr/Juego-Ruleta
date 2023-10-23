@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Player {
 
 
-    private ArrayList<Bet> currentBets;
+    private final ArrayList<Bet> currentBets;
     private int currentMoney;
 
     public Player(int money) {
@@ -11,20 +11,19 @@ public class Player {
         this.currentBets = new ArrayList<Bet>();
     }
 
-    public boolean placeBet(int moneyBet, BetType bet) {
+    public void placeBet(int moneyBet, BetType bet) {
         Bet newBet = new Bet(moneyBet, bet);
         boolean res = false;
         System.out.println();
         if (moneyBet < currentMoney) {
             currentBets.add(newBet);
-            currentMoney -= newBet.moneyBet;
-            System.out.println("You placed a bet of " + newBet.moneyBet + " on " + newBet.betType.getClass() + ".");
+            currentMoney -= newBet.getMoneyBet();
+            System.out.println("You placed a bet of " + newBet.getMoneyBet() + " on " + newBet.getBetType().getClass() + ".");
             res = true;
         } else {
             System.out.println("You don't have enough money to place this bet.");
         }
         System.out.println("You now have " + currentMoney + " left.");
-        return res;
     }
 
     public void finishBetPhase() {
@@ -34,12 +33,20 @@ public class Player {
     public void checkWins() {
         System.out.println("*----- ROULETTE RESULTS -----*");
         for (Bet bet : currentBets) {
-            bet.betType.checkWinCondition();
-            if (bet.betType.checkWinCondition()) {
-                System.out.println("You won " + bet.moneyBet * bet.betType.getProfit() + " on " + bet.betType.getClass() + ".");
+            bet.getBetType().checkWinCondition();
+            if (bet.getBetType().checkWinCondition()) {
+                System.out.println("* You won " + bet.getBetType().calculateProfit(bet.getMoneyBet()) + " on " + bet.getBetType().getClass() + ". *");
+                currentMoney += (int) bet.getBetType().calculateProfit(bet.getMoneyBet());
             } else {
-                System.out.println("You lost " + bet.moneyBet + " on " + bet.betType.getClass() + ".");
+                if (Roulette.getResult() == 0) {
+                    int recoveredMoney = ProfitCalculator.calculateProfitOnZero(bet);
+                    currentMoney += recoveredMoney;
+                    System.out.println("You lost " + recoveredMoney + " on " + bet.getBetType().getClass() + ".");
+                } else {
+                    System.out.println("You lost " + bet.getMoneyBet() + " on " + bet.getBetType().getClass() + ".");
+                }
             }
+            System.out.println("You now have " + currentMoney + " left.");
         }
     }
 
@@ -49,10 +56,6 @@ public class Player {
 
     public int getCurrentMoney() {
         return currentMoney;
-    }
-
-    public void setCurrentMoney(int currentMoney) {
-        this.currentMoney = currentMoney;
     }
 
     public ArrayList<Bet> getCurrentBets() {
