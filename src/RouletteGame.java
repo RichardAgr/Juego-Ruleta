@@ -33,7 +33,9 @@ public class RouletteGame {
         //Testing CornerBet
         player.placeBet(100, new CornerBet(17, 15));
         //Testing SplitBet
-
+        player.placeBet(100, new SplitBet(24, 25));
+        //Testing 18Bet
+        player.placeBet(100, new BetOn18(true));
 
         player.finishBetPhase();
         System.out.println();
@@ -42,6 +44,7 @@ public class RouletteGame {
         Roulette.spin();
         System.out.println("And the result is...");
         System.out.println(Roulette.getResult() + " " + Roulette.getColor().toString());
+        player.checkWins();
         System.out.println();
         System.out.println("*----- GAME FINISHED -----*");
 

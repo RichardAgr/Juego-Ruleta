@@ -1,10 +1,11 @@
 
 public class BetOnNumber extends BetType {
     private final int numberBet;
-    private final int profit = 35;
 
     public BetOnNumber(int numberBet) {
         this.numberBet = numberBet;
+        super.description = "Apuesta a un número, ganancia de 35 a 1";
+        super.profit = 35;
     }
 
     @Override
@@ -14,11 +15,7 @@ public class BetOnNumber extends BetType {
 
     @Override
     public double calculateProfit(int moneyBet) {
-        return ProfitCalculator.calculateProfit(moneyBet, profit);
-    }
-
-    public int getProfit() {
-        return profit;
+        return ProfitCalculator.calculateProfit(moneyBet, super.profit);
     }
 
 }

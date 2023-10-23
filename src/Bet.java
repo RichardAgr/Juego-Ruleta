@@ -1,14 +1,17 @@
 public class Bet {
-    public int moneyBet;
-    public BetType betType;
+    private final int moneyBet;
+    private final BetType betType;
 
     public Bet(int moneyBet, BetType betType) {
         this.moneyBet = moneyBet;
         this.betType = betType;
     }
 
-    public int calculateProfit() {
-        return 0;
+    public int getMoneyBet() {
+        return moneyBet;
     }
 
+    public BetType getBetType() {
+        return betType;
+    }
 }

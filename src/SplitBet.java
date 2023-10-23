@@ -1,11 +1,12 @@
 public class SplitBet extends BetType implements BetValidation{
     private final int numberA;
     private final int numberB;
-    private final int profit = 17;
 
     public SplitBet(int numberA, int numberB) {
         this.numberA = numberA;
         this.numberB = numberB;
+        super.description = "Apuesta de caballo, ganancia de 1 a 17";
+        super.profit = 17;
     }
 
     @Override
@@ -16,13 +17,8 @@ public class SplitBet extends BetType implements BetValidation{
 
     @Override
     public double calculateProfit(int moneyBet) {
-        return ProfitCalculator.calculateProfit(moneyBet, profit);
+        return ProfitCalculator.calculateProfit(moneyBet, super.profit);
     }
-
-    public int getProfit() {
-        return profit;
-    }
-
 
     @Override
     public boolean isValidBet() {

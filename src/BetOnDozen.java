@@ -2,14 +2,15 @@ public class BetOnDozen extends BetType implements BetValidation {
     private final boolean dozen1;
     private final boolean dozen2;
     private final boolean dozen3;
-
-    private final int profitOnDozen = 2;
     private final float profitOnTwoDozens = 0.5f;
+    private final String descriptionOnTwoDozens = "Apuesta a dos docenas, ganancia de 0.5 a 1";
 
     BetOnDozen(boolean dozen1, boolean dozen2, boolean dozen3) {
         this.dozen1 = dozen1;
         this.dozen2 = dozen2;
         this.dozen3 = dozen3;
+        super.description = "Apuesta a la docena, ganancia de 2 a 1";
+        super.profit = 2;
     }
 
     @Override
@@ -27,15 +28,15 @@ public class BetOnDozen extends BetType implements BetValidation {
 
     @Override
     public double calculateProfit(int moneyBet) {
-        return (isTwoDozenBet()) ? ProfitCalculator.calculateProfit(moneyBet, profitOnTwoDozens) : ProfitCalculator.calculateProfit(moneyBet, profitOnDozen);
+        return (isTwoDozenBet()) ? ProfitCalculator.calculateProfit(moneyBet, profitOnTwoDozens) : ProfitCalculator.calculateProfit(moneyBet, super.profit);
     }
 
-    public int getProfit() {
-        return profitOnDozen;
+    public float getProfitOnTwoDozen() {
+        return profitOnTwoDozens;
     }
 
-    public int getProfitOnDozen() {
-        return profitOnDozen;
+    public float getProfitOnTwoDozens() {
+        return profitOnTwoDozens;
     }
 
     @Override

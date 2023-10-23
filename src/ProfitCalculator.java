@@ -9,6 +9,6 @@ public class ProfitCalculator {
     }
 
     public static int calculateProfitOnZero(Bet currentBet) {
-        return currentBet.moneyBet/2;
+        return currentBet.getMoneyBet()/2;
     }
 }

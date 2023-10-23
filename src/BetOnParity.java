@@ -1,10 +1,11 @@
 public class BetOnParity extends BetType {
 
     private final boolean isEvenBet;
-    private final int profit = 1;
 
     public BetOnParity(boolean isEvenBet) {
         this.isEvenBet = isEvenBet;
+        super.description = "Apuesta a la paridad, ganancia de 1 a 1";
+        super.profit = 35;
     }
 
     @Override
@@ -14,11 +15,7 @@ public class BetOnParity extends BetType {
 
     @Override
     public double calculateProfit(int moneyBet) {
-        return ProfitCalculator.calculateProfit(moneyBet, profit);
-    }
-
-    public int getProfit() {
-        return profit;
+        return ProfitCalculator.calculateProfit(moneyBet, super.profit);
     }
 
     private boolean isRouletteNumberEven() {

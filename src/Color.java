@@ -9,6 +9,7 @@ public enum Color {
         this.colorName = colorName;
     }
 
+    // Getter method to get the color name
     public String getColorName() {
         return colorName;
     }

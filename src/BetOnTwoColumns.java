@@ -6,6 +6,8 @@ public class BetOnTwoColumns extends BetType implements BetValidation {
     BetOnTwoColumns(int columnNumber1, int columnNumber2) {
         this.columnNumber1 = columnNumber1;
         this.columnNumber2 = columnNumber2;
+        super.description = "Apuesta a 2 columnas, ganancia de 0.5 a 1";
+        super.profit = 0.5f;
     }
 
     @Override
@@ -31,7 +33,7 @@ public class BetOnTwoColumns extends BetType implements BetValidation {
 
     @Override
     public double calculateProfit(int moneyBet) {
-        return ProfitCalculator.calculateProfit(moneyBet, 0.5f);
+        return ProfitCalculator.calculateProfit(moneyBet, super.profit);
     }
 
     @Override

@@ -1,9 +1,10 @@
 public class BetOnColumn extends BetType implements BetValidation {
     private final int columnNumber;
-    private final int profit = 2;
 
     public BetOnColumn(int columnNumber) {
         this.columnNumber = columnNumber;
+        super.description = "Apuesta a un número, ganancia de 2 a 1";
+        super.profit = 2;
     }
 
     @Override
@@ -21,11 +22,7 @@ public class BetOnColumn extends BetType implements BetValidation {
 
     @Override
     public double calculateProfit(int moneyBet) {
-        return ProfitCalculator.calculateProfit(moneyBet, profit);
-    }
-
-    public int getProfit() {
-        return profit;
+        return ProfitCalculator.calculateProfit(moneyBet, super.profit);
     }
 
     @Override

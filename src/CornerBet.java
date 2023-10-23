@@ -1,11 +1,12 @@
 public class CornerBet extends BetType implements BetValidation{
     private int cornerA;
     private int cornerB;
-    private final int profit = 11;
 
     public CornerBet(int cornerA, int cornerB) {
         this.cornerA = cornerA;
         this.cornerB = cornerB;
+        super.description = "Apuesta a 4 numeros, ganancia de 1 a 11";
+        super.profit = 35;
     }
 
     @Override
@@ -35,7 +36,7 @@ public class CornerBet extends BetType implements BetValidation{
 
     @Override
     public double calculateProfit(int moneyBet) {
-        return ProfitCalculator.calculateProfit(moneyBet, profit);
+        return ProfitCalculator.calculateProfit(moneyBet, super.profit);
     }
 
     // TODO falta validar que no salga del tablero
@@ -44,7 +45,4 @@ public class CornerBet extends BetType implements BetValidation{
         return true;
     }
 
-    public int getProfit() {
-        return profit;
-    }
 }

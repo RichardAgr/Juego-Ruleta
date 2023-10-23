@@ -2,10 +2,11 @@
 public class BetOnColor extends BetType {
 
     private final Color colorBet;
-    private final int profit = 1;
 
     public BetOnColor(Color colorBet) {
         this.colorBet = colorBet;
+        super.description = "Apuesta a un color, ganancia de 1 a 1";
+        super.profit = 1;
     }
 
     @Override
@@ -15,11 +16,8 @@ public class BetOnColor extends BetType {
 
     @Override
     public double calculateProfit(int moneyBet) {
-        return ProfitCalculator.calculateProfit(moneyBet, profit);
+        return ProfitCalculator.calculateProfit(moneyBet, super.profit);
     }
 
-    public int getProfit() {
-        return profit;
-    }
 }
 
