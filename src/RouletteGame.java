@@ -41,10 +41,14 @@ public class RouletteGame {
         System.out.println();
         System.out.println("*----- BET PHASE FINISHED -----*");
         System.out.println("The roulette is spinning...");
+
         Roulette.spin();
+
         System.out.println("And the result is...");
         System.out.println(Roulette.getResult() + " " + Roulette.getColor().toString());
+
         player.checkWins();
+
         System.out.println();
         System.out.println("*----- GAME FINISHED -----*");
 
