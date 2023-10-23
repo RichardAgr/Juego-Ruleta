@@ -1,16 +1,20 @@
 
-public abstract class BetType implements WinCondition {
+public abstract class BetType {
+    protected String description = "No existe descripción";
+    protected float profit;
 
-    public int profit = 1;
-    private String description = "";
 
-    public int getProfit() {
-        return profit;
-    }
+    public abstract double calculateProfit(int moneyBet);
+
+    public abstract boolean checkWinCondition();
 
     public String getDescription() {
         return description;
     }
 
-    public abstract boolean checkWinCondition();
+    public float getProfit() {
+        return profit;
+    }
+
+
 }
