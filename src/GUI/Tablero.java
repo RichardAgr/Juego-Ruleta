@@ -1,3 +1,9 @@
+/*
+ * Autores:
+ * Aguilar Choque Ricardo
+ * Christian Rojas Blum
+ * */
+
 package GUI;
 
 import java.awt.Color;

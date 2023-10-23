@@ -1,3 +1,8 @@
+/*
+* Autores:
+* Aguilar Choque Ricardo
+* Christian Rojas Blum
+* */
 public class Bet {
     private final int moneyBet;
     private final BetType betType;

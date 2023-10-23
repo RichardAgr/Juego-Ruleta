@@ -1,3 +1,8 @@
+/*
+ * Autores:
+ * Aguilar Choque Ricardo
+ * Christian Rojas Blum
+ * */
 public class BetOn18 extends BetType {
 
     private final boolean isFirst18;

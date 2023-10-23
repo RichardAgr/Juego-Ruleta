@@ -1,3 +1,8 @@
+/*
+ * Autores:
+ * Aguilar Choque Ricardo
+ * Christian Rojas Blum
+ * */
 public class BetOnTwoColumns extends BetType implements BetValidation {
 
     private final int columnNumber1;

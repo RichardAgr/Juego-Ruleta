@@ -1,4 +1,10 @@
+/*
+ * Autores:
+ * Aguilar Choque Ricardo
+ * Christian Rojas Blum
+ * */
 // Apuesta transversal
+
 public class StreetBet extends BetType implements BetValidation {
     private final int rowNumber;
 

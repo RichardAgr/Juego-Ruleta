@@ -1,4 +1,9 @@
 
+/*
+ * Autores:
+ * Aguilar Choque Ricardo
+ * Christian Rojas Blum
+ * */
 public class BetOnColor extends BetType {
 
     private final Color colorBet;

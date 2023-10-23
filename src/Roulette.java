@@ -1,3 +1,9 @@
+/*
+ * Autores:
+ * Aguilar Choque Ricardo
+ * Christian Rojas Blum
+ * */
+
 import java.util.Random;
 
 public class Roulette {

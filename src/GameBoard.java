@@ -1,3 +1,8 @@
+/*
+ * Autores:
+ * Aguilar Choque Ricardo
+ * Christian Rojas Blum
+ * */
 public class GameBoard {
     private static final int[][] gameBoard = new int[][]{
             {0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36}, // Row 3

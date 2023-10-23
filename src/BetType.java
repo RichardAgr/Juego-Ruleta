@@ -1,4 +1,8 @@
-
+/*
+ * Autores:
+ * Aguilar Choque Ricardo
+ * Christian Rojas Blum
+ * */
 public abstract class BetType {
     protected String description = "No existe descripción";
     protected float profit;

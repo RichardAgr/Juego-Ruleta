@@ -1,4 +1,8 @@
-
+/*
+ * Autores:
+ * Aguilar Choque Ricardo
+ * Christian Rojas Blum
+ * */
 public class BetOnNumber extends BetType {
     private final int numberBet;
 

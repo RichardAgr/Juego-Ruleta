@@ -1,3 +1,8 @@
+/*
+ * Autores:
+ * Aguilar Choque Ricardo
+ * Christian Rojas Blum
+ * */
 public class BetOnParity extends BetType {
 
     private final boolean isEvenBet;

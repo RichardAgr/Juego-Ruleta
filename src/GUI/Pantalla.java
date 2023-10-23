@@ -1,3 +1,9 @@
+/*
+ * Autores:
+ * Aguilar Choque Ricardo
+ * Christian Rojas Blum
+ * */
+
 package GUI;
 
 import javax.swing.JFrame;
@@ -40,7 +46,7 @@ public class Pantalla extends JFrame{
         add(rule,gbc);
 
         JPanel play = new Jugador();
-        gbc.gridx = 0;
+        gbc.gridx = 1;
         gbc.gridy = 1;
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
@@ -48,6 +54,26 @@ public class Pantalla extends JFrame{
         gbc.weighty = 1.0;
         gbc.fill = GridBagConstraints.BOTH;
         add(play,gbc);
+
+        JPanel numRuleta = new NumeroRuleta();
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.gridwidth = 1;
+        gbc.gridheight = 1;
+        gbc.weightx = 1.0;
+        gbc.weighty = 1.0;
+        gbc.fill = GridBagConstraints.BOTH;
+        add(numRuleta,gbc);
+
+        JPanel apuesta = new ApuestasDiferentes();
+        gbc.gridx = 2;
+        gbc.gridy = 1;
+        gbc.gridwidth = 1;
+        gbc.gridheight = 1;
+        gbc.weightx = 1.0;
+        gbc.weighty = 1.0;
+        gbc.fill = GridBagConstraints.BOTH;
+        add(apuesta,gbc);
     }
 
     public static void main(String[] args){

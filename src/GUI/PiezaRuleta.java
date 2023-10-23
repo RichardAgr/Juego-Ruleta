@@ -1,3 +1,8 @@
+/*
+ * Autores:
+ * Aguilar Choque Ricardo
+ * Christian Rojas Blum
+ * */
 package GUI;
 
 public class PiezaRuleta {

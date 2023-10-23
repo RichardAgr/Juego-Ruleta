@@ -1,3 +1,8 @@
+/*
+ * Autores:
+ * Aguilar Choque Ricardo
+ * Christian Rojas Blum
+ * */
 public class BetOnDozen extends BetType implements BetValidation {
     private final boolean dozen1;
     private final boolean dozen2;

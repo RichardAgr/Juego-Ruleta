@@ -1,3 +1,8 @@
+/*
+ * Autores:
+ * Aguilar Choque Ricardo
+ * Christian Rojas Blum
+ * */
 public class CornerBet extends BetType implements BetValidation{
     private int cornerA;
     private int cornerB;
