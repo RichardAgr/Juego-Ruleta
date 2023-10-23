@@ -36,10 +36,12 @@ public class Player {
         for (Bet bet : currentBets) {
             bet.betType.checkWinCondition();
             if (bet.betType.checkWinCondition()) {
-                System.out.println("You won " + bet.moneyBet * bet.betType.getProfit() + " on " + bet.betType.getClass() + ".");
+                System.out.println("* You won " + bet.betType.calculateProfit(bet.moneyBet) + " on " + bet.betType.getClass() + ". *");
+                currentMoney += (int) bet.betType.calculateProfit(bet.moneyBet);
             } else {
                 System.out.println("You lost " + bet.moneyBet + " on " + bet.betType.getClass() + ".");
             }
+            System.out.println("You now have " + currentMoney + " left.");
         }
     }
 

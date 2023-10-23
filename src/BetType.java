@@ -1,12 +1,8 @@
 
 public abstract class BetType implements WinCondition {
-
-    public int profit = 1;
     private String description = "";
 
-    public int getProfit() {
-        return profit;
-    }
+    public abstract double calculateProfit(int moneyBet);
 
     public String getDescription() {
         return description;
