@@ -1,17 +1,8 @@
-/*
- * Autores:
- * Aguilar Choque Ricardo
- * Christian Rojas Blum
- * */
+package GUI2;
 
-package GUI;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-
+import javax.swing.*;
+import java.awt.*;
 import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-
 public class Pantalla extends JFrame{
     private GridBagConstraints gbc = new GridBagConstraints();
 
@@ -25,55 +16,66 @@ public class Pantalla extends JFrame{
         setVisible(true);
     }
 
-    public void armarMesa(){
-        JPanel tabla = new Tablero();
-        gbc.gridx = 1;
+    private void armarMesa(){
+        JPanel tablero = new Tablero();
+        gbc.gridx = 2;
         gbc.gridy = 0;
-        gbc.gridwidth = 2;
+        gbc.gridwidth = 1;
         gbc.gridheight = 1;
         gbc.weighty = 1.0;
+        gbc.weightx = 1.0;
         gbc.fill = GridBagConstraints.BOTH;
-        add(tabla,gbc);
+        add(tablero,gbc);
 
+        JPanel ruleta = new Ruleta();
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        gbc.gridwidth = 1;
+        gbc.gridheight = 1;
+        gbc.weighty = 1.0;
+        gbc.weightx = 1.0;
+        gbc.fill = GridBagConstraints.BOTH;
+        add(ruleta,gbc);
 
-        JPanel rule = new Ruleta();
+        JPanel datosJugador = new DatosJugador();
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        gbc.weightx = 1.0;
-        gbc.fill = GridBagConstraints.BOTH;
-        add(rule,gbc);
-
-        JPanel play = new Jugador();
-        gbc.gridx = 1;
-        gbc.gridy = 1;
-        gbc.gridwidth = 1;
-        gbc.gridheight = 1;
-        gbc.weightx = 1.0;
         gbc.weighty = 1.0;
-        gbc.fill = GridBagConstraints.BOTH;
-        add(play,gbc);
-
-        JPanel numRuleta = new NumeroRuleta();
-        gbc.gridx = 0;
-        gbc.gridy = 1;
-        gbc.gridwidth = 1;
-        gbc.gridheight = 1;
         gbc.weightx = 1.0;
-        gbc.weighty = 1.0;
         gbc.fill = GridBagConstraints.BOTH;
-        add(numRuleta,gbc);
+        add(datosJugador,gbc);
 
-        JPanel apuesta = new ApuestasDiferentes();
+        JPanel jugador = new Jugador();
         gbc.gridx = 2;
         gbc.gridy = 1;
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
-        gbc.weightx = 1.0;
         gbc.weighty = 1.0;
+        gbc.weightx = 1.0;
         gbc.fill = GridBagConstraints.BOTH;
-        add(apuesta,gbc);
+        add(jugador,gbc);
+
+        JPanel apuestas = new Apuestas();
+        gbc.gridx = 1;
+        gbc.gridy = 1;
+        gbc.gridwidth = 1;
+        gbc.gridheight = 1;
+        gbc.weighty = 1.0;
+        gbc.weightx = 1.0;
+        gbc.fill = GridBagConstraints.BOTH;
+        add(apuestas,gbc);
+
+        JPanel play = new PlayGame();
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.gridwidth = 1;
+        gbc.gridheight = 1;
+        gbc.weighty = 1.0;
+        gbc.weightx = 1.0;
+        gbc.fill = GridBagConstraints.BOTH;
+        add(play,gbc);
     }
 
     public static void main(String[] args){

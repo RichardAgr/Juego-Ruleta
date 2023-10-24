@@ -63,6 +63,9 @@ public class RouletteGame {
         System.out.println(Arrays.toString(GameBoard.getCompleteColumn(0)));
         System.out.println(Arrays.toString(GameBoard.getCompleteColumn(1)));
         System.out.println(Arrays.toString(GameBoard.getCompleteColumn(2)));
+
+        // Prueba enmascaramiento
+        BetType testEnmascaramiento = (BetType) new BetOn18( true);
     }
 
 }
