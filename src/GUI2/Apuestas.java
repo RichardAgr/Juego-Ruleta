@@ -61,6 +61,7 @@ public class Apuestas extends JPanel {
         }
 
         for (int i = 0; i < 10; i++) {
+            gbc.insets = new Insets(5,5,5,5);
             gbc.gridx = i % 2;
             gbc.gridy = i / 2;
             add(botones[i], gbc);

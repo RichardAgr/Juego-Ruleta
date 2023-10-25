@@ -52,6 +52,8 @@ public class PlayGame extends JPanel{
         boton3.setBorder(new EmptyBorder(0, 0, 0, 0));
         boton3.setFont(nuevaTipografia);
 
+        gbc.insets = new Insets(5,5,5,5);
+
         gbc.gridx = 0;
         gbc.gridy = 0;
         add(boton1, gbc);
