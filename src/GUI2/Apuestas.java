@@ -55,7 +55,9 @@ public class Apuestas extends JPanel {
             JButton boton = new JButton(botonApuesta[i]);
             boton.setMargin(new Insets(0,0 , 0, 0));
             boton.setBorder(new EmptyBorder(0, 0, 0, 0));
+            boton.setBackground(new Color(41, 68, 31));
             boton.setFont(nuevaTipografia);
+            boton.setForeground(Color.WHITE);
             boton.setPreferredSize(new Dimension(130,35));
             botones[i] = boton;
         }
