@@ -5,12 +5,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.sql.Time;
 
 public class Ruleta extends JPanel {
     private BufferedImage img;
+    private Timer tiempo;
+    private int vueltas = 0;
     private double angulo = 0;
-    //private Image img;
     public Ruleta(){
         setPreferredSize(new Dimension(300,150));
         try {
@@ -18,10 +18,11 @@ public class Ruleta extends JPanel {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Timer tiempo = new Timer(100,e ->{
+        tiempo = new Timer(6,e ->{
             angulo += 1;
             if(angulo >= 360){
                 angulo-=360;
+                vueltas++;
             }
             repaint();
         });
@@ -44,4 +45,7 @@ public class Ruleta extends JPanel {
             g2d.dispose();
         }
     }
+
+
+
 }

@@ -8,7 +8,10 @@ import java.io.File;
 
 public class PlayGame extends JPanel{
     private GridBagConstraints gbc;
+
     private Image img;
+
+    private Ruleta ruleta = new Ruleta();
 
     public PlayGame(){
         setLayout(new GridBagLayout());
@@ -32,7 +35,6 @@ public class PlayGame extends JPanel{
     }
 
     private void ponerBotones(){
-
         Font nuevaTipografia = new Font("Arial", Font.BOLD, 16);
         JButton boton1 = new JButton("Gira Ruleta");
         boton1.setPreferredSize(new Dimension(160,35));
@@ -72,6 +74,9 @@ public class PlayGame extends JPanel{
         gbc.gridy = 2;
         add(boton3, gbc);
 
+        boton1.addActionListener(e->{
+
+        });
     }
 
 }
