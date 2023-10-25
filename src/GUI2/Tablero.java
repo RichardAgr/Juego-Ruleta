@@ -8,7 +8,6 @@ import java.io.File;
 import java.io.IOException;
 
 public class Tablero extends JPanel {
-    //imagenDeFondo = ImageIO.read(new File("C://Users//asus//OneDrive//Escritorio//Juego-Ruleta//src//GUI2//img//tableroR.png"))
     private Image img;
     public Tablero(){
         setPreferredSize(new Dimension(600,50));

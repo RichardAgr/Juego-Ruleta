@@ -8,7 +8,7 @@ public class Pantalla extends JFrame{
 
     public Pantalla(){
         setTitle("Ruleta");
-        setSize(1200, 800);
+        setSize(1200, 700);
         setLocationRelativeTo(null);
         setLayout(new GridBagLayout());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
