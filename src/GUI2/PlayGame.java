@@ -5,33 +5,32 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 public class PlayGame extends JPanel{
-    private JPanel contenedorPlay;
-    private GridBagConstraints gbc = new GridBagConstraints();
+    private GridBagConstraints gbc;
+
     public PlayGame(){
-        contenedorPlay = new JPanel();
-        contenedorPlay.setLayout(new GridBagLayout());
-        gbc.gridwidth = GridBagConstraints.REMAINDER;
-        botonesJuego();
-        add(contenedorPlay);
+        setLayout(new GridBagLayout());
+        gbc = new GridBagConstraints();
+        ponerBotones();
+
     }
 
-    private void botonesJuego(){
-        Font nuevaTipografia = new Font("Arial", Font.BOLD, 16);
+    private void ponerBotones(){
+        JButton button1 = new JButton("Botón 1");
+        JButton button2 = new JButton("Botón 2");
+        JButton button3 = new JButton("Botón 3");
 
-        JButton boton1 = new JButton("Girar Ruleta");
-        JButton boton2 = new JButton("Jugador");
-        JButton boton3 = new JButton("Ganacian por \n apuesta");
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        add(button1, gbc);
 
-        boton1.setPreferredSize(new java.awt.Dimension(150, 30));
-        boton1.setMargin(new Insets(0, 0, 0, 0));
-        boton1.setBorder(new EmptyBorder(0, 0, 0, 0));
-        boton1.setFont(nuevaTipografia);
-        boton2.setPreferredSize(new java.awt.Dimension(150, 30));
-        boton3.setPreferredSize(new java.awt.Dimension(150, 30));
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        add(button2, gbc);
 
-        gbc.anchor = GridBagConstraints.CENTER;
-        contenedorPlay.add(boton1,gbc);
-        contenedorPlay.add(boton2,gbc);
-        contenedorPlay.add(boton3,gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        add(button3, gbc);
+
     }
+
 }
