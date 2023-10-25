@@ -5,11 +5,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import javax.imageio.ImageIO;
 import java.io.IOException;
 
 public class Tablero extends JPanel {
     private BufferedImage imagenDeFondo;
+    private Image imagenRedimencionada;
 
     public Tablero(){
         try {
@@ -18,13 +18,13 @@ public class Tablero extends JPanel {
         }catch (IOException E){
             E.printStackTrace();
         }
-        setPreferredSize(new Dimension(750,45));
+        this.setPreferredSize(new Dimension(750,45));
     }
 
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         if (imagenDeFondo != null) {
-            Image imagenRedimencionada = imagenDeFondo.getScaledInstance(900,400,Image.SCALE_SMOOTH);
+            imagenRedimencionada = imagenDeFondo.getScaledInstance(900,400,Image.SCALE_SMOOTH);
             g.drawImage(imagenRedimencionada, 0, 0,this);
         }
     }
