@@ -4,6 +4,8 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 
 public class PlayGame extends JPanel{
@@ -74,8 +76,16 @@ public class PlayGame extends JPanel{
         gbc.gridy = 2;
         add(boton3, gbc);
 
-        boton1.addActionListener(e->{
-
+        boton2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                JDialog dialogo = new JDialog();
+                dialogo.setTitle("Jugador");
+                dialogo.setContentPane(new PopapJugador());
+                dialogo.setSize(300, 200);
+                dialogo.setModal(true);
+                dialogo.setLocationRelativeTo(null);
+                dialogo.setVisible(true);
+            }
         });
     }
 
