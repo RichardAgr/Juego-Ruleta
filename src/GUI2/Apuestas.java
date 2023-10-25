@@ -9,13 +9,11 @@ import java.io.File;
 import java.io.IOException;
 
 public class Apuestas extends JPanel {
-    private JPanel contenedorApuesta;
+    private GridBagConstraints gbc;
     public Apuestas(){
-        setLayout(new BorderLayout());
-        contenedorApuesta = new JPanel();
-        contenedorApuesta.setLayout(new GridLayout(5,2));
-        contenedorApuesta.setPreferredSize(new Dimension(180,30));
-        add(contenedorApuesta,BorderLayout.CENTER);
+        setLayout(new GridBagLayout());
+        gbc = new GridBagConstraints();
+        setPreferredSize(new Dimension(200,80));
         ponerBotones();
     }
 
@@ -37,12 +35,21 @@ public class Apuestas extends JPanel {
     private void ponerBotones(){
         Font nuevaTipografia = new Font("Arial", Font.BOLD, 16);
         String[] botonApuesta = nomApuesetas();
+        JButton[] botones = new JButton[10];
+
         for(int i=0;i<10;i++){
             JButton boton = new JButton(botonApuesta[i]);
-            boton.setMargin(new Insets(0, 0, 0, 0));
+            boton.setMargin(new Insets(0,0 , 0, 0));
             boton.setBorder(new EmptyBorder(0, 0, 0, 0));
             boton.setFont(nuevaTipografia);
-            contenedorApuesta.add(boton);
+            boton.setPreferredSize(new Dimension(130,35));
+            botones[i] = boton;
+        }
+
+        for (int i = 0; i < 10; i++) {
+            gbc.gridx = i % 2;
+            gbc.gridy = i / 2;
+            add(botones[i], gbc);
         }
     }
 

@@ -8,26 +8,23 @@ import java.io.File;
 import java.io.IOException;
 
 public class Tablero extends JPanel {
-    private BufferedImage imagenDeFondo;
-    private Image imagenRedimencionada;
-
+    //imagenDeFondo = ImageIO.read(new File("C://Users//asus//OneDrive//Escritorio//Juego-Ruleta//src//GUI2//img//tableroR.png"))
+    private Image img;
     public Tablero(){
+        setPreferredSize(new Dimension(600,50));
         try {
-            imagenDeFondo = ImageIO.read(new File("C://Users//asus//OneDrive//Escritorio//Juego-Ruleta//src//GUI2//img//tableroR.png"));
-
-        }catch (IOException E){
-            E.printStackTrace();
+            img = ImageIO.read(new File("C://Users//asus//OneDrive//Escritorio//Juego-Ruleta//src//GUI2//img//tableroR.png"));
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        this.setPreferredSize(new Dimension(750,45));
     }
 
+    @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        if (imagenDeFondo != null) {
-            imagenRedimencionada = imagenDeFondo.getScaledInstance(900,400,Image.SCALE_SMOOTH);
-            g.drawImage(imagenRedimencionada, 0, 0,this);
+        if (img != null) {
+            g.drawImage(img, 0, 0, getWidth(), getHeight(), this);
         }
     }
-
 
 }
