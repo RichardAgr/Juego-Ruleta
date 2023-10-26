@@ -42,7 +42,7 @@ public class Apuestas extends JPanel {
         botonApuesta[5]="Split bet";
         botonApuesta[6]="Bet on column";
         botonApuesta[7]="Bet on dozen";
-        botonApuesta[8]="Bet on 2 colum";
+        botonApuesta[8]="Bet on 2 column";
         botonApuesta[9]="Street bet";
         return botonApuesta;
     }

@@ -4,6 +4,7 @@
  * Aguilar Choque Ricardo
  * Christian Rojas Blum
  * */
+package logica;
 public class BetOnColor extends BetType {
 
     private final Color colorBet;

@@ -3,6 +3,7 @@
  * Aguilar Choque Ricardo
  * Christian Rojas Blum
  * */
+package logica;
 public class BetOn18 extends BetType {
 
     private final boolean isFirst18;
