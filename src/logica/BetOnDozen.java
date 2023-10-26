@@ -12,7 +12,7 @@ public class BetOnDozen extends BetType implements BetValidation {
     private final float profitOnTwoDozens = 0.5f;
     private final String descriptionOnTwoDozens = "Apuesta a dos docenas, ganancia de 0.5 a 1";
 
-    BetOnDozen(boolean dozen1, boolean dozen2, boolean dozen3) {
+    public BetOnDozen(boolean dozen1, boolean dozen2, boolean dozen3) {
         this.dozen1 = dozen1;
         this.dozen2 = dozen2;
         this.dozen3 = dozen3;

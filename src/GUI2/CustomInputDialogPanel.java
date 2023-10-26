@@ -13,6 +13,7 @@ public class CustomInputDialogPanel extends JPanel {
     private JCheckBox booleanField1;
     private JCheckBox booleanField2;
     private JCheckBox booleanField3;
+
     private JComboBox<Color> colorJComboBox;
 
     public CustomInputDialogPanel(String tipoApuesta) {
@@ -77,7 +78,6 @@ public class CustomInputDialogPanel extends JPanel {
         JLabel label4 = new JLabel("campo1");
         add(label4);
 
-        // Crea un JComboBox con las opciones del enum TipoApuesta
         colorJComboBox = new JComboBox<>(Color.values());
         add(colorJComboBox);
     }
@@ -112,7 +112,7 @@ public class CustomInputDialogPanel extends JPanel {
                 only2TextField("columna 1", "columna 2");
                 break;
             case "Street bet":
-                only2TextField("Esquina 1", "Esquina 2");
+                only1TextField("Fila a apostar");
                 break;
 
             default:
@@ -147,16 +147,20 @@ public class CustomInputDialogPanel extends JPanel {
         return (int)textField3.getValue();
     }
 
-    public JCheckBox getBooleanField1() {
-        return booleanField1;
+    public boolean getBooleanField1() {
+        return booleanField1.isSelected();
     }
 
-    public JCheckBox getBooleanField2() {
-        return booleanField2;
+    public boolean getBooleanField2() {
+        return booleanField2.isSelected();
     }
 
-    public JCheckBox getBooleanField3() {
-        return booleanField3;
+    public boolean getBooleanField3() {
+        return booleanField3.isSelected();
+    }
+
+    public Color getColorJComboBox() {
+        return (Color) colorJComboBox.getSelectedItem();
     }
 
 }
