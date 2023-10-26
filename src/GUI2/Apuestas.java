@@ -11,6 +11,7 @@ import java.io.IOException;
 public class Apuestas extends JPanel {
     private GridBagConstraints gbc;
     private Image img;
+    private ApuestaListener apuestaListener;
     public Apuestas(){
         setLayout(new GridBagLayout());
         gbc = new GridBagConstraints();
@@ -52,6 +53,7 @@ public class Apuestas extends JPanel {
         JButton[] botones = new JButton[10];
 
         for(int i=0;i<10;i++){
+            final int index = i;
             JButton boton = new JButton(botonApuesta[i]);
             boton.setMargin(new Insets(0,0 , 0, 0));
             boton.setBorder(new EmptyBorder(0, 0, 0, 0));
@@ -59,6 +61,9 @@ public class Apuestas extends JPanel {
             boton.setFont(nuevaTipografia);
             boton.setForeground(Color.WHITE);
             boton.setPreferredSize(new Dimension(130,35));
+            boton.addActionListener(e -> {
+                if (apuestaListener != null) apuestaListener.realizarApuesta(botonApuesta[index]);
+            });
             botones[i] = boton;
         }
 
@@ -68,6 +73,10 @@ public class Apuestas extends JPanel {
             gbc.gridy = i / 2;
             add(botones[i], gbc);
         }
+    }
+
+    public void setApuestaListener(ApuestaListener listener){
+        this.apuestaListener = listener;
     }
 
 }

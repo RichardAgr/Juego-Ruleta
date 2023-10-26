@@ -57,7 +57,9 @@ public class Pantalla extends JFrame{
         gbc.fill = GridBagConstraints.BOTH;
         add(jugador,gbc);
 
-        JPanel apuestas = new Apuestas();
+        Apuestas apuestas = new Apuestas();
+        ApuestasListener apuestasListener = new ApuestasListener();
+        apuestas.setApuestaListener(apuestasListener);
         gbc.gridx = 1;
         gbc.gridy = 1;
         gbc.gridwidth = 1;
