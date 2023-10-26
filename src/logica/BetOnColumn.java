@@ -3,6 +3,7 @@
  * Aguilar Choque Ricardo
  * Christian Rojas Blum
  * */
+package logica;
 public class BetOnColumn extends BetType implements BetValidation {
     private final int columnNumber;
 

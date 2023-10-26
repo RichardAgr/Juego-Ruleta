@@ -1,4 +1,4 @@
-/*
+package logica;/*
  * Autores:
  * Aguilar Choque Ricardo
  * Christian Rojas Blum

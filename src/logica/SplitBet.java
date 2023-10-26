@@ -1,3 +1,5 @@
+package logica;
+
 /*
  * Autores:
  * Aguilar Choque Ricardo

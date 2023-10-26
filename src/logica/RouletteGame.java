@@ -3,17 +3,19 @@
  * Aguilar Choque Ricardo
  * Christian Rojas Blum
  * */
-
+package logica;
 import java.util.Arrays;
 
 public class RouletteGame {
+
+    private Player player;
 
     public RouletteGame() {
         initNewGame();
     }
 
     public void initNewGame() {
-        Player player = new Player(1000);
+        player = new Player(1000);
         player.addMoney(1000);
         // Testing Bet basic logic
         player.placeBet(100, new BetOnNumber(10));
@@ -42,9 +44,6 @@ public class RouletteGame {
         player.placeBet(100, new BetOn18(true));
 
         player.finishBetPhase();
-        System.out.println();
-        System.out.println("*----- BET PHASE FINISHED -----*");
-        System.out.println("The roulette is spinning...");
 
         Roulette.spin();
 
@@ -52,6 +51,7 @@ public class RouletteGame {
         System.out.println(Roulette.getResult() + " " + Roulette.getColor().toString());
 
         player.checkWins();
+        player.getCurrentBets().clear();
 
         System.out.println();
         System.out.println("*----- GAME FINISHED -----*");
@@ -68,4 +68,7 @@ public class RouletteGame {
         BetType testEnmascaramiento = (BetType) new BetOn18( true);
     }
 
+    public Player getPlayer() {
+        return player;
+    }
 }

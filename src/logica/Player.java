@@ -1,4 +1,4 @@
-/*
+package logica;/*
  * Autores:
  * Aguilar Choque Ricardo
  * Christian Rojas Blum
@@ -19,13 +19,11 @@ public class Player {
 
     public void placeBet(int moneyBet, BetType bet) {
         Bet newBet = new Bet(moneyBet, bet);
-        boolean res = false;
         System.out.println();
         if (moneyBet < currentMoney) {
             currentBets.add(newBet);
             currentMoney -= newBet.getMoneyBet();
             System.out.println("You placed a bet of " + newBet.getMoneyBet() + " on " + newBet.getBetType().getClass() + ".");
-            res = true;
         } else {
             System.out.println("You don't have enough money to place this bet.");
         }
@@ -33,7 +31,7 @@ public class Player {
     }
 
     public void finishBetPhase() {
-
+        System.out.println("*----- BET PHASE FINISHED -----*");
     }
 
     public void checkWins() {
