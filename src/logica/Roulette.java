@@ -18,6 +18,8 @@ public class Roulette {
     }
 
     public static void spin() {
+        System.out.println();
+        System.out.println("The roulette is spinning...");
         result = randomNumber.nextInt(37);
     }
 

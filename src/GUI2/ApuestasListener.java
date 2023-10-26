@@ -16,7 +16,6 @@ public class ApuestasListener implements ApuestaListener {
     private Color color;
 
     public void realizarApuesta(String tipoApuesta) {
-        System.out.println("Apuesta realizada: " + tipoApuesta);
         CustomInputDialogPanel inputDialogPanel = new CustomInputDialogPanel(tipoApuesta);
         int result = JOptionPane.showConfirmDialog(null, inputDialogPanel, "Apuesta", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
         if (result == JOptionPane.OK_OPTION) {

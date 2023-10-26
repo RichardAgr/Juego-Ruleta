@@ -44,9 +44,6 @@ public class RouletteGame {
         player.placeBet(100, new BetOn18(true));
 
         player.finishBetPhase();
-        System.out.println();
-        System.out.println("*----- BET PHASE FINISHED -----*");
-        System.out.println("The roulette is spinning...");
 
         Roulette.spin();
 
